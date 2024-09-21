@@ -3,11 +3,13 @@
 function trigger_binder() {
     local URL="${1}"
 
-    local CONTENT=$(curl --location --trace-ascii - --connect-timeout 10 --write-out "%{http_code}" "${URL}")
+    local CONTENT=$(curl --location --connect-timeout 10 --write-out "%{response_code}" "${URL}")
     
+    echo "Result: $CONTENT"
+
     local STATUSCODE=$(echo "$CONTENT" | tail -n 1)
 
-    if [[ $STATUS -ge 200 && $STATUS -lt 300 ]]; then
+    if [[ "$STATUS" -ge 200 && "$STATUS" -lt 300 ]]; then
         echo "Success"
         echo $CONTENT
         exit 0
