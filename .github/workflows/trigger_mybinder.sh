@@ -11,7 +11,6 @@ function trigger_binder() {
 
     if [ "$STATUSCODE" -eq "200" ]; then
         echo "Success"
-        echo $CONTENT
         exit 0
     fi
 
