@@ -12,7 +12,7 @@ html:
 
 repository:
   url: https://github.com/ELC/python-interpolation
-  branch: source
+  branch: master
 
 launch_buttons:
   binderhub_url: "https://mybinder.org"
