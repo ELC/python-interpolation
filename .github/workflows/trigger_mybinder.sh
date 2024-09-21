@@ -3,7 +3,7 @@
 function trigger_binder() {
     local URL="${1}"
 
-    local CONTENT=$(curl --location --no-buffer --connect-timeout 10 --write-out "%{http_code}" "${URL}")
+    local CONTENT=$(curl --location --trace-ascii --connect-timeout 10 --write-out "%{http_code}" "${URL}")
     
     local STATUSCODE = $(echo $CONTENT | tail -n 1)
 
