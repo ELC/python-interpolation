@@ -9,13 +9,13 @@ function trigger_binder() {
 
     local STATUSCODE=$(echo "$CONTENT" | tail -n 1)
 
-    if [[ "$STATUS" -ge 200 && "$STATUS" -lt 300 ]]; then
+    if [ "$STATUSCODE" -eq "200" ]; then
         echo "Success"
         echo $CONTENT
         exit 0
     fi
 
-    echo "Error: HTTP status $STATUS"
+    echo "Error: HTTP status $STATUSCODE"
     exit 1
 }
 
