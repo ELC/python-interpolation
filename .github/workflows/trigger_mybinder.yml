@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v4
 
     - name: Trigger Binder build
       run: bash .github/workflows/trigger_mybinder.sh https://gke.mybinder.org/build/gh/ELC/python-interpolation/master
