@@ -5,7 +5,7 @@ function trigger_binder() {
 
     local CONTENT=$(curl --location --trace-ascii - --connect-timeout 10 --write-out "%{http_code}" "${URL}")
     
-    local STATUSCODE = $(echo "$CONTENT" | tail -n 1)
+    local STATUSCODE=$(echo "$CONTENT" | tail -n 1)
 
     if [[ $STATUS -ge 200 && $STATUS -lt 300 ]]; then
         echo "Success"
